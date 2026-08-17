@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maxicare - Healthcare Coverage</title>
+    
+    <!-- ========================================== -->
+    <!-- PLACEHOLDER FOR HEAD SCRIPTS               -->
+    <!-- (e.g., Google Analytics, Meta Pixel, etc.) -->
+    <!-- <script src="https://example.com/analytics.js"></script> -->
+    <!-- ========================================== -->
+
+    <style>
+        /* --- INLINE CSS --- */
+        :root {
+            /* Standard Maxicare brand colors */
+            --maxi-blue: #003da5; 
+            --maxi-yellow: #ffc72c;
+            --text-dark: #333333;
+            --bg-light: #f8f9fa;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--maxi-blue);
+            color: white;
+            padding: 1.2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            letter-spacing: 0.5px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--maxi-yellow);
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: white;
+            text-align: center;
+            padding: 5rem 2rem;
+            border-bottom: 4px solid var(--maxi-yellow);
+        }
+
+        .hero h2 {
+            font-size: 2.8rem;
+            color: var(--maxi-blue);
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Buttons */
+        .btn {
+            background-color: var(--maxi-yellow);
+            color: var(--text-dark);
+            padding: 12px 28px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        .btn:hover {
+            background-color: #e6b325;
+            transform: translateY(-2px);
+        }
+
+        /* Services / Plans Section */
+        .plans-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 4rem 5%;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            width: 320px;
+            text-align: center;
+            border-top: 4px solid var(--maxi-blue);
+        }
+
+        .card h3 {
+            color: var(--maxi-blue);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            color: #555;
+            min-height: 60px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--maxi-blue);
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Maxicare</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#plans">Our Plans</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <h2>Live Your Best Life</h2>
+            <p>Access the largest network of medical providers in the Philippines with comprehensive healthcare coverage for you and your family.</p>
+            <button class="btn" id="quoteBtn">Get a Free Quote</button>
+        </section>
+
+        <section class="plans-container" id="plans">
+            <div class="card">
+                <h3>MyMaxicare</h3>
+                <p>Full HMO coverage for individuals and families with access to top hospitals nationwide.</p>
+                <button class="btn plan-btn" data-plan="MyMaxicare">View Details</button>
+            </div>
+            <div class="card">
+                <h3>Prima</h3>
+                <p>Clinic-based healthcare program offering unlimited outpatient consultations and laboratory tests.</p>
+                <button class="btn plan-btn" data-plan="Prima">View Details</button>
+            </div>
+            <div class="card">
+                <h3>EReady</h3>
+                <p>Prepaid emergency health card for unexpected medical needs and accidents.</p>
+                <button class="btn plan-btn" data-plan="EReady">View Details</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Maxicare Mockup. All rights reserved.</p>
+    </footer>
+
+    <!-- ========================================== -->
+    <!-- PLACEHOLDER FOR BODY SCRIPTS               -->
+    <!-- (e.g., Live Chat widgets, App integrations)-->
+    <!-- <script src="https://example.com/chat-widget.js"></script> -->
+    <!-- ========================================== -->
+
+    <script>
+        /* --- INLINE JAVASCRIPT --- */
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // Hero Quote Button Interaction
+            const quoteBtn = document.getElementById('quoteBtn');
+            if (quoteBtn) {
+                quoteBtn.addEventListener('click', () => {
+                    alert('Redirecting to the Maxicare quotation portal...');
+                    // window.location.href = '/quote'; // Real implementation
+                });
+            }
+
+            // Plan Buttons Interaction (using data attributes)
+            const planButtons = document.querySelectorAll('.plan-btn');
+            planButtons.forEach(button => {
+                button.addEventListener('click', (event) => {
+                    const planName = event.target.getAttribute('data-plan');
+                    alert(`Loading information for the ${planName} plan.`);
+                });
+            });
+
+        });
+    </script>
+<script type='text/javascript'>
+	function initEmbeddedMessaging() {
+		try {
+			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+
+			embeddedservice_bootstrap.init(
+				'00DBA000003eKhR',
+				'Maxicare_WebChatbot',
+				'https://maxicare--s3storage.sandbox.my.site.com/ESWMaxicareWebChatbot1721719657047',
+				{
+					scrt2URL: 'https://maxicare--s3storage.sandbox.my.salesforce-scrt.com'
+				}
+			);
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
+	};
+</script>
+<script type='text/javascript' src='https://maxicare--s3storage.sandbox.my.site.com/ESWMaxicareWebChatbot1721719657047/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+
+</body>
+</html>
